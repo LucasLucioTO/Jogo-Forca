@@ -6,6 +6,7 @@ import java.util.*;
 public class Forca {
     Palavras palavras = new Palavras();
     Scanner write = new Scanner(System.in);
+    Scanner inteiro = new Scanner(System.in);
     int num;
     Random gerador = new Random();
     int i = 0;
@@ -16,7 +17,7 @@ public class Forca {
     public void forca(){
         for(;;){
             System.out.println("Digite\n1-Fácil\n2-Médio\n3-Difícil\n4-Sair" );
-            num = write.nextInt();
+            num = inteiro.nextInt();
             if(num == 1) {
 
 
