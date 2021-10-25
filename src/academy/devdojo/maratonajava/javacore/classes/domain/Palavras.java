@@ -6,7 +6,7 @@ public class Palavras {
     public Palavras() {
         palavras[0] = new String[]{"novo", "casa", "faca", "foca", "mesa", "meta", "luiz", "tapa", "moto", "roda" };
         palavras[1] = new String[]{"maria", "casal", "marta", "noivo", "rolha", "motor", "lucas", "canal", "cinco", "vinte" };
-        palavras[2] = new String[]{"quatro", "objeto", "eloise", "casaco", "macaco", "bonita", "victor", "girafa", "batata", "novato" };
+        palavras[2] = new String[]{"quatro", "objeto", "banana", "casaco", "macaco", "bonita", "barato", "girafa", "batata", "novato" };
     }
 
     public String[][] getPalavras() {
