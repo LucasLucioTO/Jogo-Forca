@@ -35,12 +35,12 @@ public class Forca {
                     for (n = 0; n < ajuda.length; n++) {
                         System.out.println(ajuda[n]);
                     }
-                    for (i = 0; i < 4; i++) {
+                    for (i = 0; i < imagem.length; i++) {
                         System.out.print(visual[i]);
                     }
                     System.out.println("\nDigite uma letra");
                     letter = write.nextLine();
-                    for (i = 0; i < 4; i++) {
+                    for (i = 0; i < imagem.length; i++) {
                         if (letter.equals(imagem[i])) {
                             visual[i] = imagem[i];
                             imagem[i] = "";
@@ -49,15 +49,15 @@ public class Forca {
                         else {
                             count++;
 
-                            if (count == 4) {
+                            if (count == imagem.length) {
                                 attempt--;
                             }
                         }
 
                     }
                     count = 0;
-                    if (c == 4) {
-                        for (i = 0; i < 4; i++) {
+                    if (c == imagem.length) {
+                        for (i = 0; i < imagem.length; i++) {
                             System.out.print(visual[i]);
                         }
                         System.out.println("");
@@ -72,86 +72,101 @@ public class Forca {
             }
             else if(num == 2) {
 
-                System.out.println("entrouuu!!!");
-                String[] facil = palavras.palavras[1];
-                String[] imagem = facil[gerador.nextInt(facil.length)].split("");
-                String[] visual = {"_", "_", "_", "_", "_", };
-
+                String[] medio = palavras.palavras[1];
+                int iden = gerador.nextInt(medio.length);
+                String[] imagem = medio[iden].split("");
+                String[] visual = {"_", "_", "_", "_", "_",};
+                String[] ajuda = dicas.medio[iden];
 
 
                 while (attempt != 0) {
                     System.out.println("Você tem "+attempt+" vidas.");
+                    for (n = 0; n < ajuda.length; n++) {
+                        System.out.println(ajuda[n]);
+                    }
                     for (i = 0; i < imagem.length; i++) {
                         System.out.print(visual[i]);
                     }
                     System.out.println("\nDigite uma letra");
                     letter = write.nextLine();
                     for (i = 0; i < imagem.length; i++) {
-                        System.out.println("entrou for");
                         if (letter.equals(imagem[i])) {
-
                             visual[i] = imagem[i];
-
+                            imagem[i] = "";
                             c++;
-                            if (c == imagem.length) {
-                                System.out.println("Você venceu");
-                                break;
-                            }
                         }
                         else {
-
                             count++;
-                            System.out.println(count);
-                            if (count == imagem.length) {
 
+                            if (count == imagem.length) {
                                 attempt--;
-                                count = 0;
                             }
                         }
 
-
+                    }
+                    count = 0;
+                    if (c == imagem.length) {
+                        for (i = 0; i < imagem.length; i++) {
+                            System.out.print(visual[i]);
+                        }
+                        System.out.println("");
+                        System.out.println("Você venceu");
+                        break;
                     }
                 }
-                System.out.println("Você perdeu");
+
+                if(attempt == 0){
+                    System.out.println("Você perdeu");
+                }
             }
             else if(num == 3) {
 
-                System.out.println("entrouuu!!!");
-                String[] facil = palavras.palavras[2];
-                String[] imagem = facil[gerador.nextInt(facil.length)].split("");
+                String[] dificil = palavras.palavras[2];
+                int iden = gerador.nextInt(dificil.length);
+                String[] imagem = dificil[iden].split("");
                 String[] visual = {"_", "_", "_", "_", "_", "_",};
+                String[] ajuda = dicas.dificil[iden];
+
 
                 while (attempt != 0) {
                     System.out.println("Você tem "+attempt+" vidas.");
+                    for (n = 0; n < ajuda.length; n++) {
+                        System.out.println(ajuda[n]);
+                    }
                     for (i = 0; i < imagem.length; i++) {
                         System.out.print(visual[i]);
                     }
                     System.out.println("\nDigite uma letra");
                     letter = write.nextLine();
                     for (i = 0; i < imagem.length; i++) {
-
                         if (letter.equals(imagem[i])) {
                             visual[i] = imagem[i];
-
+                            imagem[i] = "";
                             c++;
-                            if (c == imagem.length) {
-                                System.out.println("Você venceu");
-                                break;
-                            }
                         }
                         else {
-                           count++;
-                           System.out.println(count);
-                           if (count == imagem.length) {
-                               attempt--;
-                               count = 0;
-                           }
+                            count++;
+
+                            if (count == imagem.length) {
+                                attempt--;
+                            }
                         }
 
-
+                    }
+                    count = 0;
+                    if (c == imagem.length) {
+                        for (i = 0; i < imagem.length; i++) {
+                            System.out.print(visual[i]);
+                        }
+                        System.out.println("");
+                        System.out.println("Você venceu");
+                        break;
                     }
                 }
-                System.out.println("Você perdeu");
+
+                if(attempt == 0){
+                    System.out.println("Você perdeu");
+                }
             }
             else{
                 break;
